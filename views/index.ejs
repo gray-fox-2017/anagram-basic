@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anagram</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= input %> has anagram: <%= anagrams %></h1>
+      <form method = "get" action = "/">
+        <input name = 'word' type = 'text'required>
+        <button type = "submit">Anagram</button>
+      </form>
+      <table border ="1">
+        <thead>
+          <tr>
+            <td> <b>NO </b> </td>
+            <td> <b>Word</b> </td>
+          </tr>
+        </thead>
+        <tbody>
+          <% let i = 1; word.forEach((w) =>{ %>
+            <tr>
+              <td><%= i++  %> </td>
+              <td><%= w %></td>
+            </tr>
+          <%  }) %>
+        </tbody>
+      </table>
+  </body>
+</html>
