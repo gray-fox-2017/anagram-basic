@@ -9,12 +9,15 @@ router.get('/', function(req, res, next) {
 
   // release 2
   res.render('index', {title: 'Anagrams', word: word, anagrams: {} });
-
-  // release 3
-  // helper.anagrams(word, function(source, data){
-  //   res.render('index', { title: 'Anagrams', word: source, anagrams: data });
-  // });
-
 });
+
+router.post('/', function(req,res,next) {
+  // release 3
+  let word = req.body.word;
+  helper.anagrams(word, function(source, data){
+    res.render('index', { title: 'Anagrams', word: source, anagrams: data });
+  });
+});
+
 
 module.exports = router;

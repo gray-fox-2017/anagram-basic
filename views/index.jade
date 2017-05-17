@@ -2,6 +2,11 @@ extends layout
 
 block content
   h1= title
+  form(name="anagram_input", method="post")
+        div.input
+            span.label Kata    
+            input(type="text", name="word")
+        button.btn.btn-primary(type='submit') Input!
   p anagram dari kata #{word} adalah :
   if word
     ul
